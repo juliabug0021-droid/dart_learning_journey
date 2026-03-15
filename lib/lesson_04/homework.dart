@@ -13,7 +13,16 @@ void main() {
 /// - height (double) — твій зріст у метрах
 /// - name (String) — твоє ім'я
 /// - isStudent (bool) — чи ти студент
-void primitives() {}
+void primitives() {
+  int age = 29;
+  print('int:$age');
+  double height = 1.68;
+  print('double:${height.toStringAsFixed(2)}');
+  String name = 'Yuliia';
+  print('String:$name');
+  bool isStudent = true;
+  print('Is Student:$isStudent');
+}
 
 /// Завдання 2: Колекції
 /// 1. List — 3 твої улюблені кольори
