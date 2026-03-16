@@ -1,3 +1,5 @@
+// ignore_for_file: lines_longer_than_80_chars, prefer_final_locals, omit_local_variable_types
+
 void main() {
   primitives();
   collections();
@@ -28,7 +30,14 @@ void primitives() {
 /// 1. List — 3 твої улюблені кольори
 /// 2. Set — 3 унікальні оцінки, спробуй створити перевір print-ми, що вони не виводяться
 /// 3. Map — 3 предмети та їх оцінки
-void collections() {}
+void collections() {
+  List<String> colors = ['yellow', 'pink', 'white'];
+  print('List join:${colors.join(',')}');
+  Set<int> uniqueNumbers = {11, 9, 10};
+  print('Set:$uniqueNumbers');
+  Map<String, int> subjectsGrade = {'Math': 11, 'Geography': 9, 'English': 10};
+  print('Map:$subjectsGrade');
+}
 
 /// Завдання 3: var, final, const
 /// 1. Створи змінну через var — наприклад, місто проживання та зміни її декілька разів (print після кожної зміни)
