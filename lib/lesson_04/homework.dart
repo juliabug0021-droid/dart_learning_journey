@@ -17,13 +17,13 @@ void main() {
 /// - isStudent (bool) — чи ти студент
 void primitives() {
   int age = 29;
-  print('int:$age');
+  print('int: $age');
   double height = 1.68;
-  print('double:${height.toStringAsFixed(2)}');
+  print('double: ${height.toStringAsFixed(2)}');
   String name = 'Yuliia';
-  print('String:$name');
+  print('String: $name');
   bool isStudent = true;
-  print('Is Student:$isStudent');
+  print('Is Student: $isStudent');
 }
 
 /// Завдання 2: Колекції
@@ -32,18 +32,28 @@ void primitives() {
 /// 3. Map — 3 предмети та їх оцінки
 void collections() {
   List<String> colors = ['yellow', 'pink', 'white'];
-  print('List join:${colors.join(',')}');
+  print('List join: ${colors.join(',')}');
   Set<int> uniqueNumbers = {11, 9, 10};
-  print('Set:$uniqueNumbers');
+  print('Set: $uniqueNumbers');
   Map<String, int> subjectsGrade = {'Math': 11, 'Geography': 9, 'English': 10};
-  print('Map:$subjectsGrade');
+  print('Map: $subjectsGrade');
 }
 
 /// Завдання 3: var, final, const
 /// 1. Створи змінну через var — наприклад, місто проживання та зміни її декілька разів (print після кожної зміни)
 /// 2. Створи змінну через final — наприклад, країна
 /// 3. Створи змінну через const — наприклад, кількість днів у тижні
-void varFinalConst() {}
+void varFinalConst() {
+  var city = 'Kharkiv';
+  print('var: $city');
+  city = 'Kyiv';
+  print('var: $city');
+  city = 'Lviv';
+  print('var: $city');
+  final country = 'Ukraine';
+  print('final: $country');
+  const planet = 'Earth';
+}
 
 /// Завдання 4: Record
 /// Створи іменований та не іменований (позиційний) record з твоїм ім'ям та віком і виведи обидва поля.
