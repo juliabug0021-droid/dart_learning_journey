@@ -97,7 +97,7 @@ void task5() {
   var score = 0;
   var correctAnswers = 17;
   var mistakes = 3;
-  var totalQuestions = 20;
+  final totalQuestions = 20;
   correctAnswers *= 10;
   mistakes *= 5;
   score += correctAnswers -= mistakes;
@@ -118,7 +118,20 @@ void task5() {
 /// Додатково: якщо оцінка менше 20 — вивести “Повторити курс”.
 /// Поексперементуйте, змінюючи  значення examScore
 
-void task6() {}
+void task6() {
+  final examScore = 56;
+  if (examScore > 90) {
+    print('Відмінно');
+  } else if (examScore >= 75) {
+    print('Добре');
+  } else if (examScore >= 60) {
+    print('Задовільно');
+  } else if (examScore >= 20) {
+    print('Не здано');
+  } else {
+    print('Повторити курс');
+  }
+}
 
 /// Завдання 7: Конструкція switch statement
 /// Створіть змінну dayNumber від 1 до 7.
