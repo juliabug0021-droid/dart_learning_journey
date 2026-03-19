@@ -53,7 +53,14 @@ void task2() {
 /// Чи можна зробити покупку (якщо є гроші і магазин відкритий).
 /// Чи потрібно почекати (якщо магазин закритий або немає грошей).
 /// Використайте оператори &&, ||, !.
-void task3() {}
+void task3() {
+  final hasMoney = true;
+  final isStoreOpen = true;
+  final canShop = hasMoney & isStoreOpen;
+  final nextTime = !hasMoney || !isStoreOpen;
+  print('Чи можу я зробити покупки? $canShop');
+  print('Чи покупки зроблю наступного разу? $nextTime');
+}
 
 /// Завдання 4: Тернарний оператор
 /// Створіть змінну temperature.
