@@ -172,7 +172,21 @@ void task7() {
 /// Виведіть тільки парні числа.
 /// Обчисліть суму чисел від 1 до 10.
 
-void task8() {}
+void task8() {
+  for (var i = 1; i <= 10; i++) {
+    print('Число: $i');
+  }
+  for (var i = 1; i <= 10; i++) {
+    if (i % 2 == 0) {
+      print('Парне число: $i');
+    }
+  }
+  var counter = 0;
+  for (var i = 1; i <= 10; i++) {
+    counter = counter + i;
+  }
+  print('Сума: $counter');
+}
 
 /// Завдання 9: Цикл while
 /// Почніть із числа 10.
