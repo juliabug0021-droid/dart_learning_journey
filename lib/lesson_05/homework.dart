@@ -72,9 +72,12 @@ void task3() {
 /// Якщо менше 10 — вивести “Дуже холодно”.
 
 void task4() {
-  final temperature = 30;
-  temperature > 25 ? print('Тепло') : print('Прохолодно');
-  temperature < 10 ? print('Дуже холодно') : print('Прохолодно');
+  final temperature = 12;
+  temperature > 25
+      ? print('Тепло')
+      : temperature < 10
+      ? print('Дуже холодно')
+      : print('Прохолодно');
 }
 
 /// Завдання 5: Оператори присвоєння
