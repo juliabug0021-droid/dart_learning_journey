@@ -56,7 +56,7 @@ void task2() {
 void task3() {
   final hasMoney = true;
   final isStoreOpen = true;
-  final canShop = hasMoney & isStoreOpen;
+  final canShop = hasMoney && isStoreOpen;
   final nextTime = !hasMoney || !isStoreOpen;
   print('Чи можу я зробити покупки? $canShop');
   print('Чи покупки зроблю наступного разу? $nextTime');
