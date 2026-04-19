@@ -60,4 +60,16 @@ void main() async {
   fetchAge();
   stopwatch2.stop();
   print('Тривалість (fetchAge):${stopwatch2.elapsedMicroseconds} мікросекунд');
+
+  //task 5
+  //зворотній відлік через 1 секунду
+  Future<void> delayedCountdown(int seconds) async {
+    for (var i = seconds; i > 0; i--) {
+      print(i);
+      await Future<void>.delayed(const Duration(seconds: 1));
+    }
+  }
+
+  await delayedCountdown(3);
+  print('Старт!');
 }
