@@ -30,18 +30,34 @@ void main() async {
       print('Мені $age років');
   }
   //task 3
+  //послідовне виконання Future
   fetchName().then((_) {
     fetchAge();
   });
   //вимірювання часу виконання методів fetchName та fetchAge
-  final stopwatch = Stopwatch();
-  stopwatch.start();
+  final stopwatch1 = Stopwatch();
+  stopwatch1.start();
   fetchName();
-  stopwatch.stop();
-  print(stopwatch.elapsedMicroseconds);
-  stopwatch.reset();
-  stopwatch.start();
+  stopwatch1.stop();
+  print('Тривалість (fetchName):${stopwatch1.elapsedMicroseconds} мікросекунд');
+  stopwatch1.reset();
+  stopwatch1.start();
   fetchAge();
-  stopwatch.stop();
-  print(stopwatch.elapsedMicroseconds);
+  stopwatch1.stop();
+  print('Тривалість (fetchAge):${stopwatch1.elapsedMicroseconds} мікросекунд');
+
+  //task 4
+  //паралельне виконання Future
+  Future.wait([fetchName(), fetchAge()]);
+  //вимірювання часу виконання методів fetchName та fetchAge
+  final stopwatch2 = Stopwatch();
+  stopwatch2.start();
+  fetchName();
+  stopwatch2.stop();
+  print('Тривалість (fetchName):${stopwatch2.elapsedMicroseconds} мікросекунд');
+  stopwatch2.reset();
+  stopwatch2.start();
+  fetchAge();
+  stopwatch2.stop();
+  print('Тривалість (fetchAge):${stopwatch2.elapsedMicroseconds} мікросекунд');
 }
