@@ -29,4 +29,19 @@ void main() async {
     case 5 || 6 || 7 || 8 || 9 || 0:
       print('Мені $age років');
   }
+  //task 3
+  fetchName().then((_) {
+    fetchAge();
+  });
+  //вимірювання часу виконання методів fetchName та fetchAge
+  final stopwatch = Stopwatch();
+  stopwatch.start();
+  fetchName();
+  stopwatch.stop();
+  print(stopwatch.elapsedMicroseconds);
+  stopwatch.reset();
+  stopwatch.start();
+  fetchAge();
+  stopwatch.stop();
+  print(stopwatch.elapsedMicroseconds);
 }
