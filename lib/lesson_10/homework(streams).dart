@@ -13,4 +13,15 @@ void main() async {
   await for (final value in timerStream) {
     print('"$value..."');
   }
+
+  //task 8
+  final controller = StreamController<String>();
+  controller.add('Yellow');
+  controller.add('White');
+  controller.add('Pink');
+  controller.stream.listen(
+    (value) => print('Колір: $value'),
+    onDone: () => print('Стрім завершено!'),
+  );
+  await controller.close();
 }
