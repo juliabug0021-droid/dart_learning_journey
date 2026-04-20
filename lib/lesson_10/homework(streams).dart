@@ -7,4 +7,10 @@ void main() async {
     print('метод await for: $value');
   }
   iterableStream.listen((value) => print('метод listen: $value'));
+
+  //task 7
+  final timerStream = Stream.periodic(Duration(seconds: 1), (i) => i).take(10);
+  await for (final value in timerStream) {
+    print('"$value..."');
+  }
 }
