@@ -6,8 +6,28 @@ void main() async {
   print('Мене звати $result1');
 
   //Task 2: Асинхронне отримання віку
-  final result2 = await fetchAge(29);
+  final age = 29;
+  final result2 = await fetchAge(age);
   print(result2);
+
+  //Task 3: Послідовне виконання Future
+  final stopwatch = Stopwatch();
+  stopwatch.start();
+  await fetchName();
+  await fetchAge(age);
+  stopwatch.stop();
+  print('Послідовне виконання:${stopwatch.elapsedMilliseconds} мілісекунд');
+
+  //Task 4: Паралельне виконання Future (Future.wait)
+  stopwatch.reset();
+  stopwatch.start();
+  await Future.wait([fetchName(), fetchAge(age)]);
+  stopwatch.stop();
+  print('Паралельне виконання:${stopwatch.elapsedMilliseconds} мілісекунд');
+
+  //Task 5: Зворотний відлік з затримкою
+  await delayedCountdown(3);
+  print('Старт!');
 }
 
 //Task 1: Асинхронне отримання імені
@@ -34,47 +54,10 @@ Future<String> fetchAge(int age) async {
   }
 }
 
-//   //task 3
-//   //послідовне виконання Future
-//   fetchName().then((_) {
-//     fetchAge();
-//   });
-//   //вимірювання часу виконання методів fetchName та fetchAge
-//   final stopwatch1 = Stopwatch();
-//   stopwatch1.start();
-//   fetchName();
-//   stopwatch1.stop();
-//   print('Тривалість (fetchName):${stopwatch1.elapsedMicroseconds} мікросекунд');
-//   stopwatch1.reset();
-//   stopwatch1.start();
-//   fetchAge();
-//   stopwatch1.stop();
-//   print('Тривалість (fetchAge):${stopwatch1.elapsedMicroseconds} мікросекунд');
-
-//   //task 4
-//   //паралельне виконання Future
-//   Future.wait([fetchName(), fetchAge()]);
-//   //вимірювання часу виконання методів fetchName та fetchAge
-//   final stopwatch2 = Stopwatch();
-//   stopwatch2.start();
-//   fetchName();
-//   stopwatch2.stop();
-//   print('Тривалість (fetchName):${stopwatch2.elapsedMicroseconds} мікросекунд');
-//   stopwatch2.reset();
-//   stopwatch2.start();
-//   fetchAge();
-//   stopwatch2.stop();
-//   print('Тривалість (fetchAge):${stopwatch2.elapsedMicroseconds} мікросекунд');
-
-//   //task 5
-//   //зворотній відлік через 1 секунду
-//   Future<void> delayedCountdown(int seconds) async {
-//     for (var i = seconds; i > 0; i--) {
-//       print(i);
-//       await Future<void>.delayed(const Duration(seconds: 1));
-//     }
-//   }
-
-//   await delayedCountdown(3);
-//   print('Старт!');
-// }
+//Task 5: Зворотний відлік з затримкою
+Future<void> delayedCountdown(int seconds) async {
+  for (var i = seconds; i > 0; i--) {
+    print(i);
+    await Future<void>.delayed(const Duration(seconds: 1));
+  }
+}
